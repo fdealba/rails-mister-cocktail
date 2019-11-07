@@ -11,7 +11,13 @@
   </head>
 
   <body>
+    <div class="navbar-dark bg-light mb-5 navbar">
+      <%= link_to image_tag("cocktail.png", width: "100px"), cocktails_path%>
+      <%= link_to "Add New Cocktail", new_cocktail_path, class: "btn btn-danger" %>
+    </div>
+    <div class="container text-white">
     <%= yield %>
+    </div>
     <%= javascript_include_tag "application" %> <!-- from app/assets/javascripts/application.js -->
     <%= javascript_pack_tag "application" %>    <!-- from app/javascript/packs/application.js -->
   </body>

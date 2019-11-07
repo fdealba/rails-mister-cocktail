@@ -1,0 +1,32 @@
+@-webkit-keyframes rotate {
+100%{ -webkit-transform: rotate(360deg); transform: rotate(360deg); }
+}
+@keyframes rotate {
+100%{ transform: rotate(360deg); }
+}
+.cards {
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+grid-template-rows: repeat(4, 1fr);
+grid-column-gap: 5px;
+grid-row-gap: 5px;
+}
+
+.card {
+  height: 250px;
+  weight: 250px;
+  background-size: cover;
+  padding: 5px;
+  text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+  transition: all 0.5s ease;
+  a {
+    color: white;
+    text-decoration: none;
+    font-size: 30px;
+  }
+  &:hover {
+    transform: rotate(360deg);
+  }
+}
+
+

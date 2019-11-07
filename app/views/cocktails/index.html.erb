@@ -1,0 +1,7 @@
+<div class="cards">
+  <% @cocktails.each do |cocktail| %>
+  <div class="card text-center" style="background-image: url(<%= cocktail.image %>)">
+     <p><%=link_to cocktail.name, cocktail_path(cocktail)%></p>
+  </div>
+  <% end %>
+</div>

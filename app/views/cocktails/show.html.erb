@@ -1,0 +1,22 @@
+<h1><%= @cocktail.name %></h1>
+<h4>Ingredients:</h4>
+<div class="new-card">
+  <%@cocktail.doses.each do |dose|%>
+  <p><strong><%= dose.ingredient.name %></strong>: <%= dose.description %>  <%= link_to raw('<i class="fas fa-trash" style="color: red !important;"></i>'), dose_path(dose), method: :delete, data: { confirm: "Are you sure?" } %></p>
+<% end %>
+</div>
+
+<%= link_to "Add New Dose",  new_cocktail_dose_path(@cocktail), class: "btn btn-danger" %>
+<%= link_to "Add review", new_cocktail_review_path(@cocktail), class: "btn btn-danger" %>
+
+<%= link_to "Go Back",  cocktails_path, class: "btn btn-danger" %>
+
+<h1>Reviews</h1>
+<div class="text-left p-0">
+
+<% @cocktail.reviews.each do |review| %>
+
+ <p><% review.rating.times do %>
+ <i class="fas fa-star" style="color: yellow;"></i><% end %> - <%= review.content %></p>
+<% end %>
+</div>
