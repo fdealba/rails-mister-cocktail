@@ -2,21 +2,28 @@
 <h4>Ingredients:</h4>
 <div class="new-card">
   <%@cocktail.doses.each do |dose|%>
-  <p><strong><%= dose.ingredient.name %></strong>: <%= dose.description %>  <%= link_to raw('<i class="fas fa-trash" style="color: red !important;"></i>'), dose_path(dose), method: :delete, data: { confirm: "Are you sure?" } %></p>
+  <p><strong><%= dose.ingredient.name.capitalize %></strong>: <%= dose.description %>  <%= link_to raw('<i class="fas fa-trash" style="color: red !important;"></i>'), dose_path(dose), method: :delete, data: { confirm: "Are you sure?" } %></p>
 <% end %>
+<div class="cont">
+  <%= link_to "Add New Dose",  new_cocktail_dose_path(@cocktail), class: "custom-button-two" %>
 </div>
+</div>
+<br>
 
-<%= link_to "Add New Dose",  new_cocktail_dose_path(@cocktail), class: "btn btn-danger" %>
-<%= link_to "Add review", new_cocktail_review_path(@cocktail), class: "btn btn-danger" %>
 
-<%= link_to "Go Back",  cocktails_path, class: "btn btn-danger" %>
 
+<br>
+<div class="text-left p-0 w-50">
 <h1>Reviews</h1>
-<div class="text-left p-0">
-
+<p> <%= @cocktail.reviews.any? ? "" : "Be the First to Review #{@cocktail.name}!" %></p>
 <% @cocktail.reviews.each do |review| %>
 
  <p><% review.rating.times do %>
  <i class="fas fa-star" style="color: yellow;"></i><% end %> - <%= review.content %></p>
 <% end %>
+<br>
+<%= link_to "Add review", new_cocktail_review_path(@cocktail), class: "custom-button" %>
 </div>
+<%= link_to "Go Back",  cocktails_path, class: "custom-button" %>
+<br>
+<br>

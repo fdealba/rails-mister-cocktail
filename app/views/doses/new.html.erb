@@ -2,8 +2,11 @@
     <%= f.association :ingredient, collection: Ingredient.all %>
     <%= f.input :description%>
 <br>
-  <%= f.button :submit, class: "btn btn-danger mb-2"%>
-  <p><%= link_to "Go back", cocktail_path(@cocktail), class: "btn btn-danger" %></p>
+  <%= f.button :submit, class: "custom-button mb-2"%>
+  <br>
+  <br>
+  <p><%= link_to "Go back", cocktail_path(@cocktail), class: "custom-button" %></p>
+  <br>
   </div>
 </div>
 <% end %>

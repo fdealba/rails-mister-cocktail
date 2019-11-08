@@ -1,0 +1,25 @@
+.custom-button {
+  padding: 15px 10px;
+  background-color: transparent;
+  border: 2px solid #B0BF1A;
+  color: #B0BF1A;
+  &:hover {
+    color: white;
+    border: 2px solid white;
+  }
+}
+
+.bata {
+  margin-top: 30px;
+}
+
+.custom-button-two {
+  color: #B0BF1A;
+  &:hover {
+    color: white;
+  }
+}
+
+.cont {
+  text-align: right;
+}

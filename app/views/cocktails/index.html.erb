@@ -1,8 +1,10 @@
 <div class="cards">
   <% @cocktails.each do |cocktail| %>
-  <div class="card text-center" style="background-image: url('<%= cl_image_path cocktail.photo %>')">
-     <p><%=link_to cocktail.name, cocktail_path(cocktail)%></p>
-  </div>
+  <a href="<%= cocktail_path(cocktail) %>">
+    <div class="card text-center" href="<%= cocktail_path(cocktail) %>" style="background-image: url('<%= cl_image_path cocktail.photo %>')">
+       <p><%= cocktail.name%></p>
+    </div>
+  </a>
   <% end %>
 </div>
 
