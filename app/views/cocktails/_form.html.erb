@@ -1,9 +1,11 @@
 <%= simple_form_for (@cocktail) do |f| %>
     <%= f.input :name%>
-    <%= f.input :image %>
+    <%= f.input :photo %>
+    <%= f.input :photo_cache, as: :hidden %>
 <br>
   <%= f.button :submit, class: "btn btn-danger mb-2"%>
   <p><%= link_to "Go back", cocktails_path, class: "btn btn-danger" %></p>
   </div>
 </div>
 <% end %>
+
